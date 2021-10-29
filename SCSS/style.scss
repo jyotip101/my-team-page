@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+  }
+@mixin fonts ($color: #000000, 
+                $family: serif, 
+                $size: 100%, 
+                $weight: normal, 
+                $line-height: 0, 
+                $la-spacing: 0,
+                $style: normal
+            ) {
+
+    color: $color;
+    font-family: $family; 
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+    letter-spacing: $la-spacing;
+    font-style: $style;
+
+}
+body {
+    margin: 0;
+    background-color: #fafafa;
+
+    & .container{
+        
+        margin: calc(100vw - 95vw) calc(100vw - 92%) ;  
+
+        & .header{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center; 
+            flex-direction: row;
+            & h1{
+                @include fonts( $color:#ca2727c2, 
+                                $family: serif, 
+                                $size: 36px, 
+                                $weight: bold,
+                                $line-height: 48px,
+                                $la-spacing: -0.045em,
+                                $style: normal);
+            }
+
+            & p {
+                position: relative;
+                margin: 1rem;
+                @include fonts($color:#000000, 
+                                    $family: poppins,
+                                    $size: 18px, 
+                                    $line-height: 27px 
+                                    );
+            
+                span{
+                    @include fonts($color:#000000, 
+                                    $family: poppins,
+                                    $size: 18px,
+                                    $weight: 600,
+                                    $line-height: 27px );
+
+                    text-transform: uppercase;
+                }
+            }
+
+        }
+
+        & .team{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: row;
+            & .members{
+                // margin: 2rem;
+                background-image: url('/my-team-page/images/photo1.png');
+                background-size: cover;
+                background-position: bottom;
+                width: 30%;
+                height: 40vw;
+                margin: 2rem;
+                 
+                & .text { 
+                    margin-top: 25px;
+                    margin-left: 90%;
+                    width: max-content;
+                    // margin-left: calc(89%);
+                    // -webkit-transform-origin: 0 0;
+                    // transform-origin: right; 
+                    transform: rotate(90deg);
+                }
+                & .name{
+                    position: relative; 
+                    margin-top: 260px;
+                }
+            }
+            
+            & .down{
+                margin-top: calc(100% - 90%);
+            }
+            // & .top{
+            //     margin-top:  calc(100% - 85%);
+            // }
+
+        }
+
+    }
+}
