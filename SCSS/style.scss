@@ -1,6 +1,7 @@
-* {
-    box-sizing: border-box;
-  }
+@import './config';
+// @import './responsiv';
+
+
 @mixin fonts ($color: #000000, 
                 $family: serif, 
                 $size: 100%, 
@@ -19,16 +20,13 @@
     font-style: $style;
 
 }
-@mixin imgUrl($url: url('/my-team-page/images/photo1.png')) {
-    background-image: $url;
-    background-size: cover;
-    background-position: bottom;
-    width: 150px;
-    height: 300px;  
+@mixin imgUrl( ) { 
+    height: calc(100% - 50%)  ;
+    width: calc(100% - 50%)  ; 
     text-align: center;
     
 }
-@mixin text ($mtop:42%, $mleft: 60%){ 
+@mixin text ($mtop:95px, $mleft: 140px){ 
     margin-top: $mtop;
     margin-left: $mleft;
     width: max-content; 
@@ -42,7 +40,7 @@
     line-height: 16px;
 }
 
-@mixin name ($mtop: 104%, $mright: 100%){
+@mixin name ($mtop: 250px, $mright: 50px){
     margin-top: $mtop;
     margin-right:$mright; 
     width: max-content;
@@ -53,207 +51,103 @@
     font-style: normal;
     line-height: 16px;
 }
+
 body {
     margin: 0;
     background-color: #fafafa;
 
-    & .container{
-           
+    & .container{   
 
-        & .header{
-            display: flex;
-            flex-wrap: wrap;
-            align-content: center; 
-            flex-direction: row;
-            
-        margin: calc(100vw - 95vw) calc(100vw - 92%) ;
-            & h1{
-                @include fonts( $color:#ca2727c2, 
-                                $family: serif, 
-                                $size: 36px, 
-                                $weight: bold,
-                                $line-height: 48px,
-                                $la-spacing: -0.045em,
-                                $style: normal);
-            }
+        & .header{ 
+             
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+            &-items {
+                  
+                & h1{ 
+                    @include fonts( $family: serif, 
+                                    $size: 32px, 
+                                    $weight: bold,
+                                    $line-height: 48px,
+                                    $la-spacing: -0.045em,
+                                    $style: normal);
+                }
 
-            & p {
-                position: relative;
-                margin: 1rem;
-                @include fonts($color:#000000, 
-                                    $family: poppins,
-                                    $size: 18px, 
-                                    $line-height: 27px 
-                                    );
-            
-                span{
+                & p {
+                    
                     @include fonts($color:#000000, 
-                                    $family: poppins,
-                                    $size: 18px,
-                                    $weight: 600,
-                                    $line-height: 27px );
+                                        $family: poppins,
+                                        $size: 18px, 
+                                        $line-height: 27px 
+                                        );
+                
+                    span{
+                        @include fonts($color:#000000, 
+                                        $family: poppins,
+                                        $size: 18px,
+                                        $weight: 600,
+                                        $line-height: 27px );
 
-                    text-transform: uppercase;
+                        text-transform: uppercase;
+                    }
                 }
             }
 
         }
+        
+        & .crew {   
 
-        & .crew{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            &-items {
 
-            & .team{ 
-                display: inline-grid;
-                grid-template-columns: auto auto auto; 
-                column-gap: 40px;
-                row-gap: 40px; 
-                // margin: 0 auto 0 auto; 
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                & .team {
+                    display: grid;
+                    grid-template-columns: 250px  250px   ;
 
-                & .members1{  
-                    @include imgUrl($url:url('/my-team-page/images/photo1.png'));
-  
-                    & .text {  
-                        @include text;
+                    & .members{  
+
+                        & .items {
+                            display: flex;
+
+                            & img{
+                                height: calc(100% - 50%);
+                                width: calc(100% - 50%); 
+                            }
+
+                            & .text{
+                                padding-top: 15px; 
+                                margin-top: 20%; 
+                                transform-origin: top;
+                                transform: rotate(90deg);
+                            }
+                        }
                     }
 
-                    & .name{  
-                        @include name;
-                    }
-                }
-                & .members2{  
-                    margin-top: 5rem;
-                    @include imgUrl($url:url('/my-team-page/images/photo2.png'));
-  
-                    & .text {  
-                        @include text($mtop:33%, $mleft: 70%);
-                    }
-
-                    & .name{  
-                        @include name($mtop: 110%);
-                    }
-                }
-                
-                & .members3{  
-                    margin-top: 0;
-                    @include imgUrl($url:url('/my-team-page/images/photo3.png'));
-  
-                    & .text {  
-                        @include text($mtop:30%, $mleft: 75%);
-                    }
-
-                    & .name{  
-                        @include name($mtop: 115%);
-                    }
                 }
 
-                & .members4{  
-                    margin-top: 0rem;
-                    @include imgUrl($url:url('/my-team-page/images/photo4.png'));
-  
-                    & .text {  
-                        @include text($mtop:38%, $mleft: 65%);
-                    }
-
-                    & .name{  
-                        @include name($mtop: 108%);
-                    }
-                }
-
-                & .members5{  
-                    margin-top: 5rem;
-                    @include imgUrl($url:url('/my-team-page/images/photo5.png'));
-  
-                    & .text {  
-                        @include text($mtop:30%, $mleft: 75%);
-                    }
-
-                    & .name{  
-                        @include name($mtop: 115%);
-                    }
-                }
-
-                & .members6{  
-                    margin-top: 0;
-                    @include imgUrl($url:url('/my-team-page/images/photo6.png'));
-  
-                    & .text {  
-                        @include text($mtop:32%, $mleft: 72%);
-                    }
-
-                    & .name{  
-                        @include name($mtop: 112%);
-                    }
-                }
             }
         }
-    }
-}
 
-@media screen and (max-width : 700px) {
-    .container {
-     & .crew {
-        & .team{ 
-            display: grid;
-            grid-template-columns: auto auto !important; 
- 
-            & .members1{
-                width: 138px !important;
-                height: 230px !important;
-                
-                & .text{
-                    margin-top: 70% !important;
-                    margin-left: 30% !important;
-                }
-            }
-            & .members2{
-                width: 138px !important;
-                height: 230px !important;
-                & .text{
-                    margin-top: 70% !important;
-                    margin-left: 30% !important;
-                }
-                
-            }
-            & .members3{
-                width: 138px !important;
-                height: 230px !important;
-                & .text{
-                    margin-top: 70% !important;
-                    margin-left: 30% !important;
-                }
-                
-            }
-            & .members4{
-                margin-top: 4rem !important;
-                width: 138px !important;
-                height: 230px !important;
-                & .text{
-                    margin-top: 70% !important;
-                    margin-left: 30% !important;
-                }
-            }
+        & footer {
             
-            & .members5{
-                margin-top: 0 !important;
-                width: 138px !important;
-                height: 230px !important;
-                & .text{
-                    margin-top: 70% !important;
-                    margin-left: 30% !important;
-                }
-            }
-            & .members6{
-                margin-top: 4rem !important;
-                width: 138px !important;
-                height: 230px !important;
-                & .text{
-                    margin-top: 70% !important;
-                    margin-left: 30% !important;
-                }
-            }
+            color: #898484;
+
+            & a{
+            font-family: monospace;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;  
+            color: #898484;
+            padding-left: 2px;
+          
+          }
         }
     }
-    }
 }
+ 

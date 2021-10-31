@@ -1,0 +1,34 @@
+
+@media screen and (max-width : 850px) {
+    body{
+ 
+        & .container {
+           
+            & .header {
+                display: block;
+                margin: 1rem 0.5rem 0.5rem 0.5rem;
+
+                &-items{
+                    display: inline-grid;
+                    grid-template-columns: none;
+                    align-items: center;
+                    justify-content: center;
+
+                    & h1{
+                        margin: 0  !important;
+
+                    }
+                }
+            }
+    
+            & .crew {
+               & .team{  
+                   grid-template-columns: auto auto !important; 
+        
+                   
+                   }
+               }
+           }
+
+    }
+}
