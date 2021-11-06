@@ -21,6 +21,8 @@
     </a>
   </h3>
 </div>
+ 
+
 
 <!-- TABLE OF CONTENTS -->
 
@@ -35,8 +37,9 @@
 <!-- OVERVIEW -->
 
 ## Overview
-
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+ 
+ 
+![Screenshot](https://user-images.githubusercontent.com/66724598/140594753-72e6f84a-c25e-4085-8276-d7582522c096.png)
  
 
 ### Built With
@@ -45,7 +48,8 @@
 
 - [HTML]
 - [CSS]
-<!-- - [Tailwind](https://tailwindcss.com/) -->
+<!-- - [Tailwind](https://tailwindcss.com/) --> 
+
 
 ## Features
 
